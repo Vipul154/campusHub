@@ -3,18 +3,18 @@ import Link from "next/link";
 import React from "react";
 import RenderTag from "./RenderTag";
 const hotQuestions = [
-  { _id: 1, title: "How to use React hooks?" },
-  { _id: 2, title: "What are the ways to center div" },
-  { _id: 3, title: "SQL aata hai kisiko?" },
-  { _id: 4, title: "Best stall konsa hai bh1 me" },
-  { _id: 5, title: "attendence kaise lagta hai?" },
+  { _id: "1", title: "How to use React hooks?" },
+  { _id: "2", title: "What are the ways to center div" },
+  { _id: "3", title: "SQL aata hai kisiko?" },
+  { _id: "4", title: "Best stall konsa hai bh1 me" },
+  { _id: "5", title: "attendence kaise lagta hai?" },
 ];
 const popularTags = [
-  { _id: 1, name: "javascript", totalQuestions: 10 },
-  { _id: 2, name: "react", totalQuestions: 5 },
-  { _id: 3, name: "nextjs", totalQuestions: 3 },
-  { _id: 4, name: "nodejs", totalQuestions: 7 },
-  { _id: 5, name: "express", totalQuestions: 2 },
+  { _id: "1", name: "javascript", totalQuestions: 10 },
+  { _id: "2", name: "react", totalQuestions: 5 },
+  { _id: "3", name: "nextjs", totalQuestions: 3 },
+  { _id: "4", name: "nodejs", totalQuestions: 7 },
+  { _id: "5", name: "express", totalQuestions: 2 },
 ];
 const RightSidebar = () => {
   return (
