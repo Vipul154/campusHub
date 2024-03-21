@@ -3,8 +3,30 @@
 import Question from "@/database/question.model";
 import Tag from "@/database/tag.model";
 import { connectToDatabase } from "../mongoose";
+import { CreateQuestionParams, GetQuestionsParams } from "./shared.types";
+import User from "@/database/user.model";
+import { revalidatePath } from "next/cache";
 
-export async function createQuestion(params: any) {
+export async function getQuestions(params: GetQuestionsParams) {
+  try {
+    connectToDatabase();
+
+    const questions = await Question.find({})
+      .populate({
+        path: "tags",
+        model: Tag,
+      })
+      .populate({ path: "author", model: User })
+      .sort({ createdAt: -1 });
+    // MongoDb by default doesnot keep full data on the question model, So we can see the title, content fields, but only reference for the tags fields. To get info for that specefic tag, we hae to populate those values.
+    return { questions };
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+}
+
+export async function createQuestion(params: CreateQuestionParams) {
   // eslint-disable-next-line no-empty
   try {
     // connect to Database
@@ -44,5 +66,6 @@ export async function createQuestion(params: any) {
 
     // So our task is to now create-a-questoin, connect it to author and then revalidate the path of question.
     // Now we now have to mark the user in the database.
+    revalidatePath(path);
   } catch (error) {}
 }
