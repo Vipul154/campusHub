@@ -39,7 +39,7 @@ const GlobalSearch = () => {
           height={24}
           className="cursor-pointer"
         />
-
+        {/* A bug was solved here, where we passed the value null wihout any onChnage. It was removed for me, as I copied the code from somewhere as a reference. */}
         <Input
           type="text"
           placeholder="Search globally"

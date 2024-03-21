@@ -13,14 +13,14 @@ const Navbar = () => {
       {/* Logo */}
       <Link href="/" className="flex items-center gap-1">
         <Image
-          src="/assets/images/site-logo.svg"
+          src="/assets/images/CurrentLogo.png"
           alt="DevFlow"
-          width={23}
-          height={23}
+          width={65}
+          height={65}
         />
 
         <p className="h2-bold font-spaceGrotesk text-dark-100 dark:text-light-900 max-sm:hidden">
-          Dev<span className="text-primary-500">Flow</span>
+          Campus<span className="text-primary-500">Hub</span>
         </p>
       </Link>
 
